@@ -84,7 +84,7 @@
         <div>
           <span class="eyebrow">FEATURED COLLECTION</span>
           <h2>Phones worth a closer look.</h2>
-          <p>Sample listings are included to show the design. Replace them with your current stock and prices in <b>script.js</b>.</p>
+          <p>Browse our current stock. Shop owners can update models, prices and products from the built-in Shop Manager.</p>
         </div>
         <div class="filters">
           <label class="search"><span>⌕</span><input id="searchInput" type="search" placeholder="Search phones..."></label>
@@ -135,7 +135,7 @@
     <div class="footer-main">
       <a class="logo" href="#home"><span class="logo-mark">A</span><span><b>ALPHA</b><small>Mobile Shop</small></span></a>
       <p>Premium phones. Personal service.<br>Made simple in Fateh Jang.</p>
-      <div class="footer-links"><a href="#phones">Phones</a><a href="#brands">Brands</a><a href="#contact">Contact</a></div>
+      <div class="footer-links"><a href="#phones">Phones</a><a href="#brands">Brands</a><a href="#contact">Contact</a><button class="manager-link" id="openManager">Shop Manager</button></div>
     </div>
     <div class="footer-bottom"><span>© <span id="year"></span> Alpha Mobile Shop</span><span>Ronaq Mobile Plaza • Shop #5</span></div>
   </footer>
@@ -148,6 +148,19 @@
       <div id="modalContent"></div>
     </div>
   </div>
+  <div class="manager-modal" id="managerModal" aria-hidden="true">
+    <div class="manager-backdrop" data-manager-close></div>
+    <div class="manager-box">
+      <button class="modal-close" data-manager-close aria-label="Close">×</button>
+      <div class="manager-head">
+        <div><span class="eyebrow">PRIVATE SHOP TOOL</span><h2>Shop Manager</h2><p>Add, edit or remove phones. Changes are saved on this device. Use <b>Export for GitHub</b> to publish them for everyone.</p></div>
+      </div>
+      <div class="manager-actions"><button class="btn primary" id="addProductBtn">+ Add Phone</button><button class="btn secondary" id="exportBtn">Export for GitHub</button><button class="btn secondary" id="importBtn">Import JSON</button><button class="btn danger" id="resetBtn">Reset Demo</button><input type="file" id="importFile" accept="application/json" hidden></div>
+      <div class="manager-list" id="managerList"></div>
+      <div class="manager-note"><b>How publishing works:</b> after you edit your stock, tap <b>Export for GitHub</b>. It downloads a new <code>products.js</code>. Upload that single file to your GitHub repository and commit the change. Your public website will then update.</div>
+    </div>
+  </div>
+  <script src="products.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
